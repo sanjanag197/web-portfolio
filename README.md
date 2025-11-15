@@ -38,7 +38,7 @@ To build the project:
 npm run build
 ```
 
-To start your local server:
+To start your local build:
 ```html
 npm start
 ```
