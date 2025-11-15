@@ -7,7 +7,7 @@
     "start": "npm-run-all --parallel watch:css serve",
     "serve": "live-server src/ --mount=/assets:assets",
     "watch:css": "cross-env NODE_ENV=development tailwindcss --postcss -i ./src/css/tailwind.css -o ./src/css/tailwind-build.css -w",
-    "build": "rm -rf public && mkdir -p public/css && cp src/index.html src/index.js public/ && cp -r assets public/ && cross-env NODE_ENV=production tailwindcss --postcss -i ./src/css/tailwind.css -o public/css/tailwind-build.css --minify"
+    "build": "rm -rf public && mkdir -p public/css && cp src/index.html src/index.js public/ && cp src/css/index.css public/css/ && cp -r assets public/ && cross-env NODE_ENV=production tailwindcss --postcss -i ./src/css/tailwind.css -o public/css/tailwind-build.css --minify"
   },
   "author": "",
   "license": "MIT",
