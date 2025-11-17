@@ -612,6 +612,10 @@ video {
   margin-bottom: 1rem;
 }
 
+.tw-ml-6 {
+  margin-left: 1.5rem;
+}
+
 .tw-mt-10 {
   margin-top: 2.5rem;
 }
@@ -772,6 +776,10 @@ video {
 
 .tw-max-w-\[650px\] {
   max-width: 650px;
+}
+
+.tw-list-disc {
+  list-style-type: disc;
 }
 
 .tw-break-inside-avoid {
