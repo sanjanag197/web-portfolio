@@ -5,15 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sanjana's Portfolio</title>
         <meta name="description" content="" />
-        <link
-            rel="shortcut icon"
-            href="assets/logo.png"
-            type="image/x-icon"
-        />
-
-        <!-- Open Graph / Facebook -->
-        <meta property="og:title" content="Title of the project" />
-        <meta property="og:description" content="" />
+                <div
+                    class="reveal-up tw-flex tw-h-full tw-w-[46%] tw-place-content-center max-lg:tw-w-full lg:tw-sticky lg:tw-top-[20%]"
+                >
+                    <h3
+                        class="tw-text-center tw-text-4xl tw-font-semibold max-lg:tw-text-2xl"
+                    >
+                        /* Lines 451-452 omitted */
+                    </h3>
+                </div>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://github.com/PaulleDemon" />
         <!--Replace with the current website url-->
@@ -49,15 +49,16 @@
                 .skills-section h3 { font-size: 1.125rem; }
             }
         </style>
+        <!-- Dark styles moved to css/index.css -->
     </head>
     <body
         class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fff] tw-font-mono"
     >
         <header
-            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
+            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] tw-items-center max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
         >
             <a
-                class="tw-h-[50px] tw-p-[4px] tw-text-2xl tw-font-medium"
+                class="tw-p-[4px] tw-text-2xl tw-font-medium"
                 href=""
             >
                Sanjana
@@ -70,16 +71,18 @@
                     class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
                 >
                     <a class="header-links" href=""> About Me </a>
-                    <a class="header-links" href="#pricing"> Work </a>
+                    <a class="header-links" href="#skills"> Skills </a>
+                    <a class="header-links" href="#experience"> Experience </a>
+                    <a class="header-links" href="#projects"> Projects </a>
                     <a class="header-links" href=""> Blog </a>
-                    <a class="header-links" href=""> Contact me </a>
+                    <a class="header-links" href="#contact"> Contact </a>
                 </div>
                 <div
                     class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
                 >
                     <a
-                        href="https://tally.so/r/woO0Kx"
-                        aria-label="signup"
+                        href="#contact"
+                        aria-label="contact"
                         class="tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full tw-bg-black tw-p-1 tw-pl-4 tw-text-white"
                     >
                         <span>Get in touch</span>
@@ -89,6 +92,10 @@
                             <i class="bi bi-arrow-up-right"></i>
                         </div>
                     </a>
+                    <!-- Theme toggle (light / dark) -->
+                    <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode" class="tw-ml-2 tw-h-[40px] tw-w-[40px] tw-flex tw-place-items-center tw-place-content-center tw-rounded-full">
+                        <i id="theme-icon" class="bi bi-moon-fill tw-text-2xl tw-text-black" aria-hidden="true"></i>
+                    </button>
                 </div>
             </div>
             <button
@@ -129,22 +136,7 @@
                           with cross-functional teams to bring ideas from concept to launch.
                     </div>
 
-                    <div
-                        class="reveal-hero-text tw-mt-4 tw-flex tw-place-items-center tw-gap-4 tw-overflow-hidden tw-p-2"
-                    >
-                        <a
-                            href="https://tally.so/r/woO0Kx"
-                            aria-label="signup"
-                            class="tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full tw-border-[1px] tw-border-solid tw-border-black tw-bg-white tw-p-1 tw-pl-4 tw-text-black tw-transition-colors tw-duration-[0.5s] hover:tw-bg-black hover:tw-text-white"
-                        >
-                            <span>Get in touch</span>
-                            <div
-                                class="tw-flex tw-h-[30px] tw-w-[30px] tw-place-content-center tw-place-items-center tw-rounded-full tw-bg-black tw-font-semibold tw-text-white"
-                            >
-                                <i class="bi bi-arrow-up-right"></i>
-                            </div>
-                        </a>
-                    </div>
+                    
                 </div>
 
                 <div
@@ -165,146 +157,170 @@
 
         <!-- Skills: moved up to appear before Past works -->
         <section
-            class="tw-relative tw-flex tw-min-h-[80vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
-            id=""
+            class="tw-relative tw-flex tw-min-h-[20vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-2"
+            id="skills"
         >
             <div
-                class="tw-mt-8 tw-flex tw-flex-col tw-place-items-center tw-gap-5"
+                class="tw-mt-1 tw-flex tw-flex-col tw-place-items-center tw-gap-5"
             >
                 <div
-                    class="reveal-up tw-mt-5 tw-flex tw-flex-col tw-gap-3 tw-text-center"
+                    class="reveal-up tw-mt-1 tw-flex tw-flex-col tw-gap-3 tw-text-center"
                 >
                     <h2 class="tw-text-4xl tw-font-semibold">
                         Skills
                     </h2>
                 </div>
                 <div
-                    class="tw-mt-6 tw-max-w-[90%] tw-place-content-center tw-gap-3 max-lg:tw-flex-col skills-section"
+                    class="reveal-up tw-my-4 tw-h-[1px] tw-w-[80%] tw-bg-black"
+                ></div>
+                <div
+                    class="tw-mt-1 skills-section"
                 >
                     <style>
-                        /* Layout the skills as a responsive grid. Strong specificity so it wins over utility classes.
-                           - On large screens attempt 8 columns (min 120px per column).
-                           - On medium screens use 4 columns, on small screens 2 columns.
-                           - Cards fill the grid cell (width:100%) and are centered flex containers.
-                        */
-                        .skills-section { display: grid !important; grid-template-columns: repeat(8, minmax(120px, 1fr)) !important; gap: 1.25rem !important; justify-items: center !important; align-items: center !important; width:100% !important; margin: 0 auto !important; }
-                        .skills-section .reveal-up { width: 100% !important; height: 120px !important; padding: 0.9rem !important; box-sizing: border-box !important; display: flex !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
+                        /* Use flexbox with centered last row */
+                        .skills-section { 
+                            display: flex !important; 
+                            flex-wrap: wrap !important; 
+                            gap: 1.25rem !important; 
+                            justify-content: center !important;
+                            max-width: 1400px !important; 
+                            margin: 0 auto !important; 
+                            padding: 0 1rem !important; 
+                        }
+                        .skills-section .reveal-up { 
+                            width: 140px !important; 
+                            height: 120px !important; 
+                            padding: 0.9rem !important; 
+                            box-sizing: border-box !important; 
+                            display: flex !important; 
+                            align-items: center !important; 
+                            justify-content: center !important; 
+                            text-align: center !important; 
+                            flex-shrink: 0 !important;
+                        }
                         /* keep icon sizing readable */
                         .skills-section .tw-text-3xl { font-size: 1.5rem !important; }
 
                         /* Ensure the inner wrapper stacks and centers content */
-                        .skills-section .reveal-up > .tw-flex { flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
+                        .skills-section .reveal-up > .tw-flex { 
+                            flex-direction: column !important; 
+                            align-items: center !important; 
+                            justify-content: center !important; 
+                            text-align: center !important; 
+                        }
 
                         /* Responsive fallbacks */
                         @media (max-width: 1200px) {
-                            .skills-section { grid-template-columns: repeat(4, minmax(120px, 1fr)) !important; }
+                            .skills-section .reveal-up { width: 160px !important; }
                         }
                         @media (max-width: 640px) {
-                            .skills-section { grid-template-columns: repeat(2, minmax(120px, 1fr)) !important; }
-                            .skills-section .reveal-up { height: 100px !important; }
+                            .skills-section { 
+                                gap: 0.75rem !important; 
+                            }
+                            .skills-section .reveal-up { width: calc(50% - 0.375rem) !important; height: 100px !important; }
                         }
                     </style>
                     <!-- Replaced local images with Devicon icon classes. If an icon doesn't render, adjust the classname to a supported devicon name or fallback to a text label. -->
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-java-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Java</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-c-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">C</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-cplusplus-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">C++</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-python-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Python</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-javascript-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">JavaScript</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-typescript-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">TypeScript</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-ocaml-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">OCaml</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-rust-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Rust</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-kotlin-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Kotlin</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-go-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Golang</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-mysql-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">SQL</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-html5-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">HTML</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-r-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">R</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-scala-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Scala</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <!-- Pandas doesn't have a dedicated Devicon; using Python as a visual proxy -->
                             <i class="devicon-python-plain colored tw-text-3xl" aria-hidden="true"></i>
@@ -312,14 +328,14 @@
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-postgresql-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">PostgreSQL</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <!-- REST API: generic server icon fallback (Node.js used as a proxy) -->
                             <i class="devicon-nodejs-plain colored tw-text-3xl" aria-hidden="true"></i>
@@ -327,14 +343,14 @@
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-jest-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Jest</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <!-- NVDA / screen reader icon not available in Devicon; using accessibility proxy -->
                             <i class="devicon-linux-plain tw-text-3xl" aria-hidden="true"></i>
@@ -342,21 +358,21 @@
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-kubernetes-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Kubernetes</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <span class="iconify tw-text-3xl" data-icon="simple-icons:amazonaws" aria-hidden="true"></span>
                             <h3 class="tw-text-sm tw-font-semibold">AWS</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <!-- SoapUI doesn't exist in Devicon; using Java as a proxy for SOAP tooling -->
                             <i class="devicon-java-plain tw-text-3xl" aria-hidden="true"></i>
@@ -364,42 +380,42 @@
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <span class="iconify tw-text-3xl" data-icon="simple-icons:postman" aria-hidden="true"></span>
                             <h3 class="tw-text-sm tw-font-semibold">Postman</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-docker-plain colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Docker</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-jenkins-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">CI/CD</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-git-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Git</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-firebase-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Firebase</h3>
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <!-- Iconify for Apache Spark (try Logos pack as a fallback) -->
                             <span class="iconify tw-text-3xl" data-icon="logos:apache-spark" data-inline="false" aria-hidden="true"></span>
@@ -407,7 +423,7 @@
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-react-original colored tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">React</h3>
@@ -417,8 +433,8 @@
                 </div>
 
                 <a
-                    href="https://tally.so/r/woO0Kx"
-                    aria-label="signup"
+                    href="#contact"
+                    aria-label="contact"
                     class="reveal-up tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full tw-bg-black tw-p-1 tw-pl-4 tw-text-white"
                 >
                     <span>Get in touch</span>
@@ -432,190 +448,11 @@
         </section>
 
         <section
-            class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-items-center tw-overflow-hidden tw-p-6 tw-py-5"
-        >
-            <h3 class="reveal-up tw-text-6xl tw-font-medium max-lg:tw-text-3xl">
-                Past works
-            </h3>
-            <div
-                class="reveal-up tw-my-4 tw-h-[1px] tw-w-[80%] tw-bg-black"
-            ></div>
-            <div
-                class="tw-mt-8 tw-gap-10 tw-space-y-8 max-md:tw-columns-1 lg:tw-columns-2 xl:tw-columns-3"
-            >
-                <div
-                    class="reveal-up tw-flex tw-h-fit tw-w-[450px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg max-lg:tw-w-full max-lg:tw-max-w-[400px]"
-                >
-                    <div class="tw-flex tw-place-items-center tw-gap-3">
-                        <div
-                            class="tw-h-[300px] tw-w-full tw-overflow-hidden tw-rounded-lg"
-                        >
-                            <img
-                                src="assets/images/home/design.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="design"
-                            />
-                        </div>
-                    </div>
-                    <div class="tw-flex tw-flex-col tw-gap-2">
-                        <h3 class="tw-text-xl tw-font-medium">Lorem</h3>
-                        <p class="tw-text-gray-600">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Beatae, vero.
-                        </p>
-                        <a href="http://" class="tw-mt-4">
-                            <span>Learn more</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="reveal-up tw-flex tw-h-fit tw-w-[450px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg max-lg:tw-w-full max-lg:tw-max-w-[400px]"
-                >
-                    <div class="tw-flex tw-place-items-center tw-gap-3">
-                        <div
-                            class="tw-h-[300px] tw-w-full tw-overflow-hidden tw-rounded-lg"
-                        >
-                            <img
-                                src="assets/images/home/editing.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="design"
-                            />
-                        </div>
-                    </div>
-                    <div class="tw-flex tw-flex-col tw-gap-2">
-                        <h3 class="tw-text-xl tw-font-medium">Fortune 500</h3>
-                        <p class="tw-text-gray-600">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit. Eum dolorum unde voluptatibus fuga soluta
-                            consequuntur!
-                        </p>
-                        <a href="http://" class="tw-mt-4">
-                            <span>Learn more</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="reveal-up tw-flex tw-h-fit tw-w-[450px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg max-lg:tw-w-full max-lg:tw-max-w-[400px]"
-                >
-                    <div class="tw-flex tw-place-items-center tw-gap-3">
-                        <div
-                            class="tw-h-[300px] tw-w-full tw-overflow-hidden tw-rounded-lg"
-                        >
-                            <img
-                                src="assets/images/home/photography.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="design"
-                            />
-                        </div>
-                    </div>
-                    <div class="tw-flex tw-flex-col tw-gap-2">
-                        <h3 class="tw-text-xl tw-font-medium">Apple</h3>
-                        <p class="tw-text-gray-600">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Aut dolorem, optio totam perspiciatis,
-                            perferendis assumenda nulla eaque autem ad magnam
-                            quisquam voluptates dolor nostrum quae odit numquam
-                            voluptas in atque.
-                        </p>
-                        <a href="http://" class="tw-mt-4">
-                            <span>Learn more</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="reveal-up tw-flex tw-h-fit tw-w-[450px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg max-lg:tw-w-full max-lg:tw-max-w-[400px]"
-                >
-                    <div class="tw-flex tw-place-items-center tw-gap-3">
-                        <div
-                            class="tw-h-[300px] tw-w-full tw-overflow-hidden tw-rounded-lg"
-                        >
-                            <img
-                                src="assets/images/home/forest.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="design"
-                            />
-                        </div>
-                    </div>
-                    <div class="tw-flex tw-flex-col tw-gap-2">
-                        <h3 class="tw-text-xl tw-font-medium">Amazon</h3>
-                        <p class="tw-text-gray-600">
-                            Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Culpa, tempora.
-                        </p>
-                        <a href="http://" class="tw-mt-4">
-                            <span>Learn more</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="reveal-up tw-flex tw-h-fit tw-w-[450px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg max-lg:tw-w-full max-lg:tw-max-w-[400px]"
-                >
-                    <div class="tw-flex tw-place-items-center tw-gap-3">
-                        <div
-                            class="tw-h-[300px] tw-w-full tw-overflow-hidden tw-rounded-lg"
-                        >
-                            <img
-                                src="assets/images/home/mountain.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="design"
-                            />
-                        </div>
-                    </div>
-                    <div class="tw-flex tw-flex-col tw-gap-2">
-                        <h3 class="tw-text-xl tw-font-medium">Ipsum</h3>
-                        <p class="tw-text-gray-600">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Velit, voluptates.
-                        </p>
-                        <a href="http://" class="tw-mt-4">
-                            <span>Learn more</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div
-                    class="reveal-up tw-flex tw-h-fit tw-w-[450px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg max-lg:tw-w-full max-lg:tw-max-w-[400px]"
-                >
-                    <div class="tw-flex tw-place-items-center tw-gap-3">
-                        <div
-                            class="tw-h-[300px] tw-w-full tw-overflow-hidden tw-rounded-lg"
-                        >
-                            <img
-                                src="assets/images/home/mountain.jpg"
-                                class="tw-h-full tw-w-full tw-object-cover"
-                                alt="design"
-                            />
-                        </div>
-                    </div>
-                    <div class="tw-flex tw-flex-col tw-gap-2">
-                        <h3 class="tw-text-xl tw-font-medium">Google</h3>
-                        <p class="tw-text-gray-600">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing
-                            elit. Velit, voluptates.
-                        </p>
-                        <a href="http://" class="tw-mt-4">
-                            <span>Learn more</span>
-                            <i class="bi bi-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section
+            id="experience"
             class="tw-relative tw-mt-10 tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center lg:tw-p-6"
         >
             <div
-                class="tw-flex tw-h-full tw-w-full tw-justify-around tw-gap-8 tw-rounded-xl tw-bg-[#e7e6e685] tw-p-4 max-lg:tw-max-w-full max-lg:tw-flex-col"
+                class="tw-flex tw-h-full tw-w-full tw-justify-around tw-gap-8 tw-rounded-xl tw-bg-[#e7e6e685] tw-p-4 max-lg:tw-max-w-full max-lg:tw-flex-col past-experience-wrap"
             >
                 <div
                     class="reveal-up tw-flex tw-h-full tw-w-[46%] tw-place-content-center max-lg:tw-w-full lg:tw-sticky lg:tw-top-[20%]"
@@ -623,7 +460,7 @@
                     <h3
                         class="tw-text-center tw-text-4xl tw-font-medium max-lg:tw-text-2xl"
                     >
-                        Past Experience
+                        Experience
                     </h3>
                 </div>
 
@@ -646,12 +483,18 @@
                                 />
                             </div>
 
-                            <div>
+                            <div class="tw-flex-1">
                                 <p class="tw-text-xl tw-font-semibold">CVS Health</p>
                                 <p class="tw-text-lg tw-text-gray-600">
                                     Software Development Engineer
                                 </p>
                             </div>
+                            <div class="tw-text-right tw-text-sm tw-text-gray-500 max-md:tw-hidden">
+                                <p>June 2025 - Present</p>
+                            </div>
+                        </div>
+                        <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
+                            <p>June 2025 - Present</p>
                         </div>
                         <div class="tw-text-justify tw-text-gray-800">
                             <ul class="tw-list-disc tw-ml-6">
@@ -672,18 +515,25 @@
                                 class="tw-flex tw-h-[60px] tw-w-[60px] tw-overflow-hidden tw-rounded-full"
                             >
                                 <img
+                                    id="nitesout-logo"
                                     src="assets/images/people/NitesOut.png"
                                     alt="nitesout"
                                     class="tw-h-full tw-w-full tw-object-cover"
                                 />
                             </div>
 
-                            <div>
+                            <div class="tw-flex-1">
                                 <p class="tw-text-xl tw-font-semibold">NitesOut Entertainment</p>
                                 <p class="tw-text-lg tw-text-gray-600">
                                     Full Stack Developer
                                 </p>
                             </div>
+                            <div class="tw-text-right tw-text-sm tw-text-gray-500 max-md:tw-hidden">
+                                <p>November 2023 - May 2025</p>
+                            </div>
+                        </div>
+                        <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
+                            <p>November 2023 - May 2025</p>
                         </div>
                         <div class="tw-text-justify tw-text-gray-800">
                             <ul class="tw-list-disc tw-ml-6">
@@ -710,12 +560,18 @@
                                 />
                             </div>
 
-                            <div>
+                            <div class="tw-flex-1">
                                 <p class="tw-text-xl tw-font-semibold">CVS Health</p>
                                 <p class="tw-text-lg tw-text-gray-600">
                                     Software Engineering Intern
                                 </p>
                             </div>
+                            <div class="tw-text-right tw-text-sm tw-text-gray-500 max-md:tw-hidden">
+                                <p>May 2024 - August 2024</p>
+                            </div>
+                        </div>
+                        <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
+                            <p>May 2024 - August 2024</p>
                         </div>
                         <div class="tw-text-justify tw-text-gray-800">
                             <ul class="tw-list-disc tw-ml-6">
@@ -724,7 +580,6 @@
                                 <li>Built and integrated RESTful APIs with comprehensive testing frameworks, ensuring 40% improvement in accessibility compliance across regulated healthcare platforms.</li>
                             </ul>
                         </div>
-
                     </div>
 
                     <div
@@ -743,12 +598,18 @@
                                 />
                             </div>
 
-                            <div>
+                            <div class="tw-flex-1">
                                 <p class="tw-text-xl tw-font-semibold">Softweb Solutions</p>
                                 <p class="tw-text-lg tw-text-gray-600">
                                     Data Analyst Intern
                                 </p>
                             </div>
+                            <div class="tw-text-right tw-text-sm tw-text-gray-500 max-md:tw-hidden">
+                                <p>May 2023 - August 2023</p>
+                            </div>
+                        </div>
+                        <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
+                            <p>May 2023 - August 2023</p>
                         </div>
                         <div class="tw-text-justify tw-text-gray-800">
                             <ul class="tw-list-disc tw-ml-6">
@@ -757,315 +618,187 @@
                                 <li>Architected cloud-based scalability solutions supporting future migrations, showcasing a forward-thinking infrastructure design.</li>
                             </ul>
                         </div>
-
                     </div>
-
-                    <div
-                        class="tw-flex tw-h-fit tw-w-full tw-flex-col tw-gap-4 tw-border-2 tw-border-black tw-bg-white tw-p-4"
-                    >
-                        <div
-                            class="tw-flex tw-w-full tw-place-items-center tw-gap-4 tw-p-2"
-                        >
-                            <div
-                                class="tw-flex tw-h-[60px] tw-w-[60px] tw-overflow-hidden tw-rounded-full"
-                            >
-                                <img
-                                    src="assets/images/people/GMU.jpg"
-                                    alt="gmu"
-                                    class="tw-h-full tw-w-full tw-object-cover"
-                                />
-                            </div>
-
-                            <div>
-                                <p class="tw-text-xl tw-font-semibold">George Mason University</p>
-                                <p class="tw-text-lg tw-text-gray-600">
-                                    Computational Biology Researcher
-                                </p>
-                            </div>
-                        </div>
-                        <div class="tw-text-justify tw-text-gray-800">
-                            <ul class="tw-list-disc tw-ml-6">
-                                <li>Researched solvent effects in organic reactions with Dr. Kenneth Foreman on ARGO and HOPPER clusters, yielding key insights.</li>
-                                <li>Used GAMESS on Hopper to optimize reactants/products with B3LYP/6-31G+ and QM/MM in NWChem, improving transitions.</li>
-                                <li>Streamlined simulation workflows to automate steps, cutting compute time 15% and speeding experimental design cycles.</li>
-                            </ul>
-                        </div>
-
-                    </div>
-                    
 
                 </div>
             </div>
-        </section>
 
-        <section
-            class="tw-relative tw-flex tw-min-h-[80vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center tw-overflow-hidden tw-p-6"
-            id=""
+            <!-- Responsive spacer to control gap before Past Works: 6rem on small, 10rem on large -->
+            <div class="tw-h-24 lg:tw-h-40" aria-hidden="true"></div>
+
+            <section
+            id="projects"
+            class="tw-relative tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-items-center tw-p-6 tw-py-5"
         >
+            <h3 class="reveal-up tw-text-4xl tw-font-semibold max-lg:tw-text-3xl">
+                Projects
+            </h3>
             <div
-                class="tw-mt-8 tw-flex tw-flex-col tw-place-items-center tw-gap-5"
+                class="reveal-up tw-my-4 tw-h-[1px] tw-w-[80%] tw-bg-black"
+            ></div>
+            <div
+                class="tw-mt-8 tw-w-full tw-max-w-[1400px] tw-px-4 max-md:tw-columns-1 lg:tw-columns-2 xl:tw-columns-3"
+                style="column-gap: 2.5rem;"
             >
                 <div
-                    class="reveal-up tw-mt-5 tw-flex tw-flex-col tw-gap-3 tw-text-center"
+                    class="reveal-up tw-flex tw-h-fit tw-w-[400px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg tw-mb-8 max-lg:tw-w-full max-lg:tw-max-w-[400px]"
                 >
-                    <h2 class="tw-text-4xl tw-font-semibold">
-                        Skills
-                    </h2>
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[220px] tw-w-full tw-overflow-hidden tw-rounded-lg"
+                        >
+                            <img
+                                src="assets/images/home/design.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="design"
+                            />
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <h3 class="tw-text-xl tw-font-medium">2024 Crime in Los Angeles</h3>
+                        <p class="tw-text-gray-600">
+                            This project analyzes 2024 Los Angeles crime data to uncover meaningful patterns across demographics and societal factors, using data science to generate insights and predictive models that support a safer, more informed community.
+                        </p>
+                        <a href="https://github.com/sanjanag197" target="_blank" rel="noopener noreferrer" class="tw-mt-4">
+                            <span>Learn more</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
+
                 <div
-                    class="tw-mt-6 tw-max-w-[90%] tw-place-content-center tw-gap-3 max-lg:tw-flex-col skills-section"
+                    class="reveal-up tw-flex tw-h-fit tw-w-[400px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg tw-mb-8 max-lg:tw-w-full max-lg:tw-max-w-[400px]"
                 >
-                    <style>
-                        /* Layout the skills as a responsive grid. Strong specificity so it wins over utility classes.
-                           - On large screens attempt 8 columns (min 120px per column).
-                           - On medium screens use 4 columns, on small screens 2 columns.
-                           - Cards fill the grid cell (width:100%) and are centered flex containers.
-                        */
-                        .skills-section { display: grid !important; grid-template-columns: repeat(8, minmax(120px, 1fr)) !important; gap: 1.25rem !important; justify-items: center !important; align-items: center !important; width:100% !important; margin: 0 auto !important; }
-                        .skills-section .reveal-up { width: 100% !important; height: 120px !important; padding: 0.9rem !important; box-sizing: border-box !important; display: flex !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
-                        /* keep icon sizing readable */
-                        .skills-section .tw-text-3xl { font-size: 1.5rem !important; }
-
-                        /* Ensure the inner wrapper stacks and centers content */
-                        .skills-section .reveal-up > .tw-flex { flex-direction: column !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
-
-                        /* Responsive fallbacks */
-                        @media (max-width: 1200px) {
-                            .skills-section { grid-template-columns: repeat(4, minmax(120px, 1fr)) !important; }
-                        }
-                        @media (max-width: 640px) {
-                            .skills-section { grid-template-columns: repeat(2, minmax(120px, 1fr)) !important; }
-                            .skills-section .reveal-up { height: 100px !important; }
-                        }
-                    </style>
-                    <!-- Replaced local images with Devicon icon classes. If an icon doesn't render, adjust the classname to a supported devicon name or fallback to a text label. -->
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-java-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Java</h3>
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[220px] tw-w-full tw-overflow-hidden tw-rounded-lg"
+                        >
+                            <img
+                                src="assets/images/home/editing.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="design"
+                            />
                         </div>
                     </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-c-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">C</h3>
-                        </div>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <h3 class="tw-text-xl tw-font-medium">Personal Website</h3>
+                        <p class="tw-text-gray-600">
+                            Built a responsive personal portfolio site and deployed it on Vercel, leveraging modern web tooling for fast, globally distributed performance.
+                        </p>
+                        <a href="https://github.com/sanjanag197" target="_blank" rel="noopener noreferrer" class="tw-mt-4">
+                            <span>Learn more</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
                     </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-cplusplus-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">C++</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-python-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Python</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-javascript-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">JavaScript</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-typescript-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">TypeScript</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-ocaml-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">OCaml</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-rust-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Rust</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-kotlin-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Kotlin</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-go-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Golang</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-mysql-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">SQL</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-html5-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">HTML</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-r-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">R</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-scala-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Scala</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- Pandas doesn't have a dedicated Devicon; using Python as a visual proxy -->
-                            <i class="devicon-python-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Pandas</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-postgresql-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">PostgreSQL</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- REST API: generic server icon fallback (Node.js used as a proxy) -->
-                            <i class="devicon-nodejs-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">REST API</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-jest-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Jest</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- NVDA / screen reader icon not available in Devicon; using accessibility proxy -->
-                            <i class="devicon-linux-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">NVDA</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-kubernetes-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Kubernetes</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <span class="iconify tw-text-3xl" data-icon="simple-icons:amazonaws" aria-hidden="true"></span>
-                            <h3 class="tw-text-sm tw-font-semibold">AWS</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- SoapUI doesn't exist in Devicon; using Java as a proxy for SOAP tooling -->
-                            <i class="devicon-java-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">SoapUI</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <span class="iconify tw-text-3xl" data-icon="simple-icons:postman" aria-hidden="true"></span>
-                            <h3 class="tw-text-sm tw-font-semibold">Postman</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-docker-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Docker</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-jenkins-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">CI/CD</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-git-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Git</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-firebase-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Firebase</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- Iconify for Apache Spark (try Logos pack as a fallback) -->
-                            <span class="iconify tw-text-3xl" data-icon="logos:apache-spark" data-inline="false" aria-hidden="true"></span>
-                            <h3 class="tw-text-sm tw-font-semibold">Spark</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-w-[220px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-react-original colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">React</h3>
-                        </div>
-                    </div>
-                    
                 </div>
 
-                <a
-                    href="https://tally.so/r/woO0Kx"
-                    aria-label="signup"
-                    class="reveal-up tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full tw-bg-black tw-p-1 tw-pl-4 tw-text-white"
+                <div
+                    class="reveal-up tw-flex tw-h-fit tw-w-[400px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg tw-mb-8 max-lg:tw-w-full max-lg:tw-max-w-[400px]"
                 >
-                    <span>Get in touch</span>
-                    <div
-                        class="tw-flex tw-h-[30px] tw-w-[30px] tw-place-content-center tw-place-items-center tw-rounded-full tw-bg-white tw-font-semibold tw-text-black"
-                    >
-                        <i class="bi bi-arrow-up-right"></i>
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[220px] tw-w-full tw-overflow-hidden tw-rounded-lg"
+                        >
+                            <img
+                                src="assets/images/home/photography.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="design"
+                            />
+                        </div>
                     </div>
-                </a>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <h3 class="tw-text-xl tw-font-medium">Blueberry Crisp</h3>
+                        <p class="tw-text-gray-600">
+                            Developed functions for the Blueberry Crisp embedded processor using C, bit operators, and pointers to optimize instruction handling. Applied hardware and assembly concepts, including efficient bit masking, to improve performance under tight resource constraints.
+                        </p>
+                        <a href="https://github.com/sanjanag197" target="_blank" rel="noopener noreferrer" class="tw-mt-4">
+                            <span>Learn more</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up tw-flex tw-h-fit tw-w-[400px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg tw-mb-8 max-lg:tw-w-full max-lg:tw-max-w-[400px]"
+                >
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[220px] tw-w-full tw-overflow-hidden tw-rounded-lg"
+                        >
+                            <img
+                                src="assets/images/home/forest.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="design"
+                            />
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <h3 class="tw-text-xl tw-font-medium">BollyHop Dance Studio</h3>
+                        <p class="tw-text-gray-600">
+                            Designed and hosted the BollyHop Dance Studio platform on AWS using S3 for static site deployment and Route 53 for domain management, supporting the studio’s fundraising mission for women in developing countries.
+                        </p>
+                        <a href="https://github.com/sanjanag197" target="_blank" rel="noopener noreferrer" class="tw-mt-4">
+                            <span>Learn more</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up tw-flex tw-h-fit tw-w-[400px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg tw-mb-8 max-lg:tw-w-full max-lg:tw-max-w-[400px]"
+                >
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[220px] tw-w-full tw-overflow-hidden tw-rounded-lg"
+                        >
+                            <img
+                                src="assets/images/home/mountain.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="design"
+                            />
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <h3 class="tw-text-xl tw-font-medium">Submit Server Simulator</h3>
+                        <p class="tw-text-gray-600">
+                            Built a UNIX-style submit-server simulator in C with a parser to handle and store file commands. Added functionality to compile and test student code while following project-specific guidelines.
+                        </p>
+                        <a href="https://github.com/sanjanag197" target="_blank" rel="noopener noreferrer" class="tw-mt-4">
+                            <span>Learn more</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div
+                    class="reveal-up tw-flex tw-h-fit tw-w-[400px] tw-break-inside-avoid tw-flex-col tw-gap-2 tw-rounded-lg tw-bg-[#f3f3f3b4] tw-p-4 tw-shadow-lg tw-mb-8 max-lg:tw-w-full max-lg:tw-max-w-[400px]"
+                >
+                    <div class="tw-flex tw-place-items-center tw-gap-3">
+                        <div
+                            class="tw-h-[220px] tw-w-full tw-overflow-hidden tw-rounded-lg"
+                        >
+                            <img
+                                src="assets/images/home/mountain.jpg"
+                                class="tw-h-full tw-w-full tw-object-cover"
+                                alt="design"
+                            />
+                        </div>
+                    </div>
+                    <div class="tw-flex tw-flex-col tw-gap-2">
+                        <h3 class="tw-text-xl tw-font-medium">KnockLang Compiler – Pattern Matching</h3>
+                        <p class="tw-text-gray-600">
+                            Created a new compiler in Racket to implement advanced pattern matching for lists, vectors, and predicate-based expressions, enabling efficient evaluation of complex data structures.
+                        </p>
+                        <a href="https://github.com/sanjanag197" target="_blank" rel="noopener noreferrer" class="tw-mt-4">
+                            <span>Learn more</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section
+        <!-- <section
             class="tw-mt-5 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[2%] max-lg:tw-p-3"
         >
             <h3
@@ -1073,13 +806,12 @@
             >
                 Read my articles for more insights ✨
             </h3>
-            <!-- pricing -->
             <div
                 class="reveal-up tw-mt-10 tw-flex tw-flex-wrap tw-place-content-center tw-gap-10 max-lg:tw-flex-col"
             >
                 <a
                     href=""
-                    class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-overflow-clip tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-2 tw-overflow-clip tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]"
                 >
                     <div
                         class="tw-h-[200px] tw-w-full tw-overflow-hidden tw-rounded-md"
@@ -1105,7 +837,7 @@
                 </a>
                 <a
                     href=""
-                    class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-overflow-clip tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-2 tw-overflow-clip tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]"
                 >
                     <div
                         class="tw-h-[200px] tw-w-full tw-overflow-hidden tw-rounded-md"
@@ -1131,7 +863,7 @@
                 </a>
                 <a
                     href=""
-                    class="tw-flex tw-h-[400px] tw-w-[350px] tw-flex-col tw-gap-2 tw-overflow-clip tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]"
+                    class="tw-flex tw-h-[400px] tw-w-[400px] tw-flex-col tw-gap-2 tw-overflow-clip tw-rounded-lg tw-bg-[#edecec79] tw-p-4 tw-shadow-xl max-lg:tw-w-[300px]"
                 >
                     <div
                         class="tw-h-[200px] tw-w-full tw-overflow-hidden tw-rounded-md"
@@ -1156,6 +888,82 @@
                     </span>
                 </a>
             </div>
+        </section> -->
+
+        <!-- Contact Form Section -->
+        <section
+            id="contact"
+            class="tw-mt-10 tw-flex tw-w-full tw-flex-col tw-place-items-center tw-p-[5%] max-lg:tw-p-6"
+        >
+            <h3 class="reveal-up tw-text-center tw-text-4xl tw-font-semibold max-md:tw-text-2xl">
+                Get in Touch
+            </h3>
+            <div class="reveal-up tw-my-4 tw-h-[1px] tw-w-[80%] tw-bg-black"></div>
+            <p class="reveal-up tw-mt-2 tw-max-w-[600px] tw-text-center tw-text-gray-600 max-md:tw-text-sm">
+                Have a question or want to work together? Fill out the form below and I'll get back to you as soon as possible!
+            </p>
+
+            <form
+                id="contact-form"
+                class="reveal-up tw-mt-8 tw-w-full tw-max-w-[600px] tw-flex tw-flex-col tw-gap-6"
+            >
+                <div class="tw-flex tw-flex-col tw-gap-2">
+                    <label for="name" class="tw-text-lg tw-font-medium">Name *</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        class="tw-rounded-lg tw-border-2 tw-border-gray-300 tw-p-3 tw-text-base focus:tw-border-black focus:tw-outline-none"
+                        placeholder="Your name"
+                    />
+                </div>
+
+                <div class="tw-flex tw-flex-col tw-gap-2">
+                    <label for="email" class="tw-text-lg tw-font-medium">Email *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        class="tw-rounded-lg tw-border-2 tw-border-gray-300 tw-p-3 tw-text-base focus:tw-border-black focus:tw-outline-none"
+                        placeholder="your_email@example.com"
+                    />
+                </div>
+
+                <div class="tw-flex tw-flex-col tw-gap-2">
+                    <label for="subject" class="tw-text-lg tw-font-medium">Subject</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        class="tw-rounded-lg tw-border-2 tw-border-gray-300 tw-p-3 tw-text-base focus:tw-border-black focus:tw-outline-none"
+                        placeholder="What's this about?"
+                    />
+                </div>
+
+                <div class="tw-flex tw-flex-col tw-gap-2">
+                    <label for="message" class="tw-text-lg tw-font-medium">Message *</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        required
+                        rows="6"
+                        class="tw-rounded-lg tw-border-2 tw-border-gray-300 tw-p-3 tw-text-base tw-resize-vertical focus:tw-border-black focus:tw-outline-none"
+                        placeholder="Tell me more about your project or inquiry..."
+                    ></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="tw-flex tw-h-[50px] tw-place-items-center tw-place-content-center tw-gap-2 tw-rounded-full tw-bg-black tw-px-6 tw-text-white tw-transition-all tw-duration-300 hover:tw-bg-gray-800 hover:tw-scale-105"
+                >
+                    <span class="tw-text-lg">Send Message</span>
+                    <i class="bi bi-arrow-up-right"></i>
+                </button>
+
+                <div id="form-status" class="tw-text-center tw-text-sm tw-hidden"></div>
+            </form>
         </section>
 
         <hr class="tw-mt-4" />
@@ -1164,25 +972,114 @@
             class="tw-mt-auto tw-flex tw-min-h-[100px] tw-w-full tw-place-content-around tw-place-items-center tw-gap-3 tw-p-[2%] tw-px-[10%] tw-text-black max-md:tw-flex-col"
         >
             <div class="tw-flex tw-gap-6 tw-text-2xl">
-                <a href="" aria-label="Github">
+                <a href="https://github.com/sanjanag197" target="_blank" rel="noopener noreferrer" aria-label="Github">
                     <i class="bi bi-github"></i>
                 </a>
                 <a
-                    href="https://twitter.com/@pauls_freeman"
-                    aria-label="Twitter"
+                    href="https://www.linkedin.com/in/sanjana-gangishetty7"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
                 >
-                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-linkedin"></i>
                 </a>
-                <a
-                    href="https://stackoverflow.com/"
-                    class="tw-h-[40px] tw-w-[40px]"
-                    aria-label="stackoverflow"
-                >
-                    <i class="bi bi-stack-overflow"></i>
-                </a>
+                
             </div>
         </footer>
     </body>
+
+    <script>
+        // Theme toggle: apply saved preference or system preference on load
+        (function () {
+            try {
+                const toggle = document.getElementById('theme-toggle');
+                const icon = document.getElementById('theme-icon');
+                function setTheme(theme) {
+                    document.body.classList.toggle('dark', theme === 'dark');
+                    if (toggle) toggle.setAttribute('aria-pressed', theme === 'dark');
+                    if (icon) {
+                        icon.classList.toggle('bi-moon-fill', theme === 'dark');
+                        icon.classList.toggle('bi-sun-fill', theme !== 'dark');
+                        // tweak icon color classes used across the page
+                        icon.classList.toggle('tw-text-white', theme === 'dark');
+                        icon.classList.toggle('tw-text-black', theme !== 'dark');
+                    }
+                    
+                    // Switch NitesOut logo based on theme
+                    const nitesoutLogo = document.getElementById('nitesout-logo');
+                    if (nitesoutLogo) {
+                        nitesoutLogo.src = theme === 'dark' 
+                            ? 'assets/images/people/nitesout_light.png' 
+                            : 'assets/images/people/NitesOut.png';
+                    }
+                    
+                    try { localStorage.setItem('theme', theme); } catch (e) { /* ignore */ }
+                }
+
+                if (toggle) {
+                    toggle.addEventListener('click', function () {
+                        const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+                        setTheme(current === 'dark' ? 'light' : 'dark');
+                    });
+                }
+
+                // Initialize: prefer saved, then OS preference
+                var saved = null;
+                try { saved = localStorage.getItem('theme'); } catch (e) { saved = null; }
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                setTheme(saved || (prefersDark ? 'dark' : 'light'));
+            } catch (err) {
+                // fail silently
+                console.error('theme init error', err);
+            }
+        })();
+    </script>
+
+    <script>
+        // Contact form handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contact-form');
+            const statusDiv = document.getElementById('form-status');
+
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+
+                    // Get form data
+                    const formData = {
+                        name: document.getElementById('name').value,
+                        email: document.getElementById('email').value,
+                        subject: document.getElementById('subject').value,
+                        message: document.getElementById('message').value
+                    };
+
+                    // Show loading state
+                    statusDiv.classList.remove('tw-hidden');
+                    statusDiv.className = 'tw-text-center tw-text-sm tw-text-blue-600';
+                    statusDiv.textContent = 'Sending message...';
+
+                    // For now, we'll simulate sending (you can integrate with a backend later)
+                    // This creates a mailto link as a fallback
+                    const mailtoLink = `mailto:sanjana2003g@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
+                    
+                    // Open mailto
+                    window.location.href = mailtoLink;
+
+                    // Show success message
+                    setTimeout(() => {
+                        statusDiv.className = 'tw-text-center tw-text-sm tw-text-green-600';
+                        statusDiv.textContent = 'Your email client should have opened. If not, please email me directly!';
+                        form.reset();
+                        
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            statusDiv.classList.add('tw-hidden');
+                        }, 5000);
+                    }, 500);
+                });
+            }
+        });
+    </script>
 
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"
