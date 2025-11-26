@@ -43,6 +43,10 @@ body.dark .reveal-hero-text.tw-bg-green-200 {
     -webkit-text-fill-color: initial !important;
 }
 
+/* Project boxes background in dark mode */
+body.dark [class*="tw-bg-[#f3f3f3b4]"] {
+    background-color: #49535f !important; /* darker box for dark mode */
+}
 
 
 html {

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Sanjana's Portfolio</title>
         <meta name="description" content="" />
-                <div
+                <!-- <div
                     class="reveal-up tw-flex tw-h-full tw-w-[46%] tw-place-content-center max-lg:tw-w-full lg:tw-sticky lg:tw-top-[20%]"
                 >
                     <h3
@@ -13,7 +13,7 @@
                     >
                         /* Lines 451-452 omitted */
                     </h3>
-                </div>
+                </div> -->
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://github.com/PaulleDemon" />
         <!--Replace with the current website url-->
@@ -55,30 +55,33 @@
         class="tw-flex tw-min-h-[100vh] tw-flex-col tw-bg-[#fff] tw-font-mono"
     >
         <header
-            class="tw-absolute tw-top-0 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] tw-items-center max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-around"
+            class="tw-absolute tw-top-7 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] tw-items-center max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-between"
         >
+            <!-- Left: Sanjana logo -->
             <a
-                class="tw-p-[4px] tw-text-2xl tw-font-medium"
+                class="tw-p-[4px] tw-text-2xl tw-font-medium tw-flex-shrink-0"
                 href=""
             >
                Sanjana
             </a>
+            
+            <!-- Center: Navigation links (hidden on mobile, shown in collapsible menu) -->
             <div
-                class="collapsible-header animated-collapse max-lg:tw-shadow-md"
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md lg:tw-flex lg:tw-flex-1 lg:tw-justify-center lg:tw-ml-40"
                 id="collapsed-header-items"
             >
                 <div
-                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-mx-auto lg:tw-place-items-center"
+                    class="tw-flex tw-h-full tw-w-max tw-gap-5 tw-text-base tw-text-black max-lg:tw-mt-[30px] max-lg:tw-flex-col max-lg:tw-place-items-end max-lg:tw-gap-5 lg:tw-place-items-center"
                 >
                     <a class="header-links" href=""> About Me </a>
                     <a class="header-links" href="#skills"> Skills </a>
                     <a class="header-links" href="#experience"> Experience </a>
                     <a class="header-links" href="#projects"> Projects </a>
-                    <a class="header-links" href=""> Blog </a>
-                    <a class="header-links" href="#contact"> Contact </a>
                 </div>
+                
+                <!-- Mobile: Get in touch + theme toggle (shown in collapsed menu) -->
                 <div
-                    class="tw-mx-4 tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center"
+                    class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-base max-md:tw-w-full max-md:tw-flex-col max-md:tw-place-content-center lg:tw-hidden"
                 >
                     <a
                         href="#contact"
@@ -93,10 +96,32 @@
                         </div>
                     </a>
                     <!-- Theme toggle (light / dark) -->
-                    <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode" class="tw-ml-2 tw-h-[40px] tw-w-[40px] tw-flex tw-place-items-center tw-place-content-center tw-rounded-full">
-                        <i id="theme-icon" class="bi bi-moon-fill tw-text-2xl tw-text-black" aria-hidden="true"></i>
+                    <button id="theme-toggle-mobile" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode" class="tw-ml-2 tw-h-[40px] tw-w-[40px] tw-flex tw-place-items-center tw-place-content-center tw-rounded-full">
+                        <i class="bi bi-moon-fill tw-text-2xl tw-text-black" aria-hidden="true"></i>
                     </button>
                 </div>
+            </div>
+            
+            <!-- Right: Get in touch + theme toggle (desktop only) -->
+            <div
+                class="tw-flex tw-place-items-center tw-gap-[20px] tw-text-base tw-flex-shrink-0 max-lg:tw-hidden"
+            >
+                <a
+                    href="#contact"
+                    aria-label="contact"
+                    class="tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full tw-bg-black tw-p-1 tw-pl-4 tw-text-white"
+                >
+                    <span>Get in touch</span>
+                    <div
+                        class="tw-flex tw-h-[30px] tw-w-[30px] tw-place-content-center tw-place-items-center tw-rounded-full tw-bg-white tw-font-semibold tw-text-black"
+                    >
+                        <i class="bi bi-arrow-up-right"></i>
+                    </div>
+                </a>
+                <!-- Theme toggle (light / dark) -->
+                <button id="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode" title="Toggle dark mode" class="tw-ml-2 tw-h-[40px] tw-w-[40px] tw-flex tw-place-items-center tw-place-content-center tw-rounded-full">
+                    <i id="theme-icon" class="bi bi-moon-fill tw-text-2xl tw-text-black" aria-hidden="true"></i>
+                </button>
             </div>
             <button
                 class="bi bi-list tw-absolute tw-right-3 tw-top-3 tw-z-50 tw-text-3xl tw-text-black lg:tw-hidden"
@@ -127,13 +152,9 @@
                         >
                     </div>
                     <div
-                        class="reveal-hero-text tw-mt-2 tw-max-w-[450px] tw-p-2 tw-text-justify max-lg:tw-max-w-full"
+                        class="reveal-hero-text tw-mt-2 tw-max-w-[600px] tw-p-2 tw-text-left tw-text-lg max-lg:tw-max-w-full"
                     >
-                        I’m a software engineer who loves building systems that solve meaningful
-                        problems—whether that’s powering financial analytics at scale, enhancing
-                         AI chat platforms, or creating accessible tools for users. I bring experience
-                          across backend, AI/ML, cloud, and full-stack development and enjoy collaborating 
-                          with cross-functional teams to bring ideas from concept to launch.
+                        I’m a software engineer who loves building systems that solve meaningful problems—whether that’s powering financial analytics at scale, enhancing AI chat platforms, or creating accessible tools for users. I bring experience across backend, AI/ML, cloud, and full-stack development and enjoy collaborating with cross-functional teams to bring ideas from concept to launch.
                     </div>
 
                     
@@ -432,27 +453,15 @@
                     
                 </div>
 
-                <a
-                    href="#contact"
-                    aria-label="contact"
-                    class="reveal-up tw-flex tw-h-[40px] tw-place-items-center tw-gap-2 tw-rounded-full tw-bg-black tw-p-1 tw-pl-4 tw-text-white"
-                >
-                    <span>Get in touch</span>
-                    <div
-                        class="tw-flex tw-h-[30px] tw-w-[30px] tw-place-content-center tw-place-items-center tw-rounded-full tw-bg-white tw-font-semibold tw-text-black"
-                    >
-                        <i class="bi bi-arrow-up-right"></i>
-                    </div>
-                </a>
             </div>
         </section>
 
         <section
             id="experience"
-            class="tw-relative tw-mt-10 tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center lg:tw-p-6"
+            class="tw-relative tw-mt-20 tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center lg:tw-p-6"
         >
             <div
-                class="tw-flex tw-h-full tw-w-full tw-justify-around tw-gap-8 tw-rounded-xl tw-bg-[#e7e6e685] tw-p-4 max-lg:tw-max-w-full max-lg:tw-flex-col past-experience-wrap"
+                class="tw-flex tw-h-full tw-w-full tw-justify-around tw-gap-8 tw-rounded-xl tw-bg-[#e7e6e685] tw-p-4 tw-pt-15 max-lg:tw-max-w-full max-lg:tw-flex-col past-experience-wrap"
             >
                 <div
                     class="reveal-up tw-flex tw-h-full tw-w-[46%] tw-place-content-center max-lg:tw-w-full lg:tw-sticky lg:tw-top-[20%]"
@@ -496,7 +505,7 @@
                         <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
                             <p>June 2025 - Present</p>
                         </div>
-                        <div class="tw-text-justify tw-text-gray-800">
+                        <div class="tw-text-left tw-text-gray-800 tw-tracking-tight">
                             <ul class="tw-list-disc tw-ml-6">
                                 <li>Built an enterprise-scale anomaly detection system for financial data management, achieving 95% accuracy while processing millions of transactions and reducing monetary errors by 18%.</li>
                                 <li>Architected and deployed a scalable AI-driven conversational platform serving 100K+ weekly users, integrating advanced LLM capabilities that increased user engagement by 20% and accelerated feature delivery by 25%.</li>
@@ -535,7 +544,7 @@
                         <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
                             <p>November 2023 - May 2025</p>
                         </div>
-                        <div class="tw-text-justify tw-text-gray-800">
+                        <div class="tw-text-left tw-text-gray-800 tw-tracking-tight">
                             <ul class="tw-list-disc tw-ml-6">
                                 <li>Led end-to-end development of React Native mobile application and customer-facing web platform, architecting secure payment processing systems handling $50K+ monthly financial transactions with zero security vulnerabilities</li>
                                 <li>Designed and implemented automated notification infrastructure that increased user engagement by 25%, demonstrating ability to build systems that continuously improve operations through intelligent automation.</li>
@@ -573,7 +582,7 @@
                         <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
                             <p>May 2024 - August 2024</p>
                         </div>
-                        <div class="tw-text-justify tw-text-gray-800">
+                        <div class="tw-text-left tw-text-gray-800 tw-tracking-tight">
                             <ul class="tw-list-disc tw-ml-6">
                                 <li>Rapidly learned and applied cutting-edge ML technologies to transform legacy guided chatbot into intelligent free-form conversational systems, improving accuracy from 85% to 98% through strategic model experimentation.
                                 <li>Collaborated cross-functionally with product and design teams to balance technical innovation with user experience requirements, delivering solutions that reduced user attrition by 20%.</li>
@@ -611,7 +620,7 @@
                         <div class="tw-text-sm tw-text-gray-500 tw-mb-2 md:tw-hidden">
                             <p>May 2023 - August 2023</p>
                         </div>
-                        <div class="tw-text-justify tw-text-gray-800">
+                        <div class="tw-text-left tw-text-gray-800 tw-tracking-tight">
                             <ul class="tw-list-disc tw-ml-6">
                                 <li>Engineered automated reporting infrastructure using cloud tools, reducing analyst time by 30% for financial analytics clients</li>
                                 <li>Applied advanced analytics to complex operational datasets, delivering actionable insights that drove 12% improvement in client inventory performance and operational efficiency.</li>
@@ -993,16 +1002,33 @@
         (function () {
             try {
                 const toggle = document.getElementById('theme-toggle');
+                const toggleMobile = document.getElementById('theme-toggle-mobile');
                 const icon = document.getElementById('theme-icon');
+                
                 function setTheme(theme) {
                     document.body.classList.toggle('dark', theme === 'dark');
+                    
+                    // Update both toggle buttons
                     if (toggle) toggle.setAttribute('aria-pressed', theme === 'dark');
+                    if (toggleMobile) toggleMobile.setAttribute('aria-pressed', theme === 'dark');
+                    
+                    // Update icon for desktop toggle
                     if (icon) {
                         icon.classList.toggle('bi-moon-fill', theme === 'dark');
                         icon.classList.toggle('bi-sun-fill', theme !== 'dark');
-                        // tweak icon color classes used across the page
                         icon.classList.toggle('tw-text-white', theme === 'dark');
                         icon.classList.toggle('tw-text-black', theme !== 'dark');
+                    }
+                    
+                    // Update icon for mobile toggle
+                    if (toggleMobile) {
+                        const mobileIcon = toggleMobile.querySelector('i');
+                        if (mobileIcon) {
+                            mobileIcon.classList.toggle('bi-moon-fill', theme === 'dark');
+                            mobileIcon.classList.toggle('bi-sun-fill', theme !== 'dark');
+                            mobileIcon.classList.toggle('tw-text-white', theme === 'dark');
+                            mobileIcon.classList.toggle('tw-text-black', theme !== 'dark');
+                        }
                     }
                     
                     // Switch NitesOut logo based on theme
@@ -1016,12 +1042,14 @@
                     try { localStorage.setItem('theme', theme); } catch (e) { /* ignore */ }
                 }
 
-                if (toggle) {
-                    toggle.addEventListener('click', function () {
-                        const current = document.body.classList.contains('dark') ? 'dark' : 'light';
-                        setTheme(current === 'dark' ? 'light' : 'dark');
-                    });
+                function toggleTheme() {
+                    const current = document.body.classList.contains('dark') ? 'dark' : 'light';
+                    setTheme(current === 'dark' ? 'light' : 'dark');
                 }
+
+                // Add click listeners to both toggle buttons
+                if (toggle) toggle.addEventListener('click', toggleTheme);
+                if (toggleMobile) toggleMobile.addEventListener('click', toggleTheme);
 
                 // Initialize: prefer saved, then OS preference
                 var saved = null;
