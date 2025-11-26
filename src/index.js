@@ -112,9 +112,9 @@ sections.forEach((sec) => {
 
     revealUptimeline.to(sec.querySelectorAll(".reveal-up"), {
         opacity: 1,
-        duration: 0.8,
+        duration: 0.4,
         y: "0%",
-        stagger: 0.2,
+        stagger: 0.05,
     })
 
 
