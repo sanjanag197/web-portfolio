@@ -30,7 +30,7 @@ const MJ_API_SECRET = process.env.MAILJET_API_SECRET;
 const SENDER_EMAIL = process.env.MAILJET_SENDER_EMAIL || 'no-reply@example.com';
 const SENDER_NAME = process.env.MAILJET_SENDER_NAME || 'Portfolio';
 const RESUME_PATH = process.env.RESUME_PATH || path.join(__dirname, 'src', 'assets', 'resume', 'Sanjana_Gangishetty_Resume.pdf');
-const RECIPIENT = 'sanjana2003g@gmail.com';
+const RECIPIENT = process.env.MAILJET_RECIPIENT || 'sanjana2003g@gmail.com';
 
 if (!MJ_API_KEY || !MJ_API_SECRET) {
   console.warn('WARNING: MAILJET_API_KEY or MAILJET_API_SECRET not set. Email sending will fail until they are provided.');
@@ -65,30 +65,33 @@ app.post('/api/send-resume', async (req, res) => {
       console.warn('Could not read resume file at', RESUME_PATH, err.message);
     }
 
-    const requestPayload = {
-      Messages: [
+    const mailMessage = {
+      From: {
+        Email: SENDER_EMAIL,
+        Name: SENDER_NAME
+      },
+      To: [
         {
-          From: {
-            Email: SENDER_EMAIL,
-            Name: SENDER_NAME
-          },
-          To: [
-            {
-              Email: RECIPIENT,
-              Name: 'Sanjana'
-            }
-          ],
-          Subject: `Resume request from ${name}${company ? ' at ' + company : ''}`,
-          TextPart: textBody,
-          HTMLPart: htmlBody,
-          // set ReplyTo so you can reply to the requester
-          ReplyTo: {
-            Email: email,
-            Name: name
-          }
+          Email: RECIPIENT,
+          Name: 'Sanjana'
         }
-      ]
+      ],
+      Subject: `Resume request from ${name}${company ? ' at ' + company : ''}`,
+      TextPart: textBody,
+      HTMLPart: htmlBody,
+      // set ReplyTo so you can reply to the requester
+      ReplyTo: {
+        Email: email,
+        Name: name
+      }
     };
+
+    // If requester provided an email, include them as CC so they receive a copy
+    if (email && email.includes('@')) {
+      mailMessage.Cc = [{ Email: email, Name: name }];
+    }
+
+    const requestPayload = { Messages: [mailMessage] };
 
     // Attach if present (Mailjet supports Attachments as Message part)
     if (attachments.length) {
