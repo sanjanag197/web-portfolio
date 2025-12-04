@@ -38,6 +38,10 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.14.0/devicon.min.css" />
         <!-- Iconify: aggregated icon sets (Simple Icons via Iconify) -->
         <script src="https://code.iconify.design/2/2.2.1/iconify.min.js"></script>
+    <!-- Favicon: modern SVG + PNG fallback (place your sg_logo.svg at assets/images/sg_logo.svg) -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/sg_logo.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
         <style>
             /* Make skill labels larger and slightly bolder for better readability */
             .skills-section h3 {
@@ -57,8 +61,10 @@
         <header
             class="tw-absolute tw-top-7 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] tw-items-center max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-between"
         >
-            <!-- Left spacer (logo removed to keep center nav centered) -->
-            <div class="tw-p-[4px] tw-text-2xl tw-font-medium tw-flex-shrink-0" aria-hidden="true"></div>
+            <!-- Site logo (drop `sg_logo.svg` into assets/images/) -->
+            <a href="/" class="tw-flex tw-items-center tw-gap-2 tw-flex-shrink-0" aria-label="Home">
+                <img src="assets/images/sg_logo.svg" alt="Sanjana logo" class="tw-h-8 tw-w-8" />
+            </a>
             
             <!-- Center: Navigation links (hidden on mobile, shown in collapsible menu) -->
             <div
@@ -173,7 +179,7 @@
                         class="tw-relative tw-flex tw-max-h-[700px] tw-min-h-[520px] tw-min-w-[280px] tw-max-w-[420px] tw-overflow-hidden max-lg:tw-h-auto max-lg:tw-max-h-[unset] max-lg:tw-min-h-[unset] max-lg:tw-overflow-visible max-lg:tw-w-[320px] max-lg:tw-min-w-[320px]"
                     >
                             <img
-                                src="assets/images/home/profile.heic"
+                                src="assets/images/home/profile.jpg"
                                 alt="app"
                                 class="reveal-hero-img tw-z-[1] tw-max-w-full tw-h-auto tw-object-contain tw-object-top"
                             />
@@ -940,7 +946,7 @@
                     <h3 class="tw-text-xl tw-font-semibold">Resume</h3>
                     <button id="resume-modal-close" class="tw-text-2xl" aria-label="Close">&times;</button>
                 </div>
-                <p class="tw-text-sm tw-text-gray-600 tw-mb-4">Please nter your details below to view my resume.</p>
+                <p class="tw-text-sm tw-text-gray-600 tw-mb-4">Please enter your details below to view my resume.</p>
 
                     <form id="resume-form" class="tw-flex tw-flex-col tw-gap-3">
                     <label class="tw-flex tw-flex-col">
@@ -1163,19 +1169,13 @@
                     statusDiv.className = 'tw-text-center tw-text-sm tw-text-blue-600';
                     statusDiv.textContent = 'Sending message...';
 
-                    // For now, we'll simulate sending (you can integrate with a backend later)
-                    // This creates a mailto link as a fallback
-                    const mailtoLink = `mailto:sanjana2003g@gmail.com?subject=${encodeURIComponent(formData.subject || 'Contact from Portfolio')}&body=${encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`)}`;
-                    
-                    // Open mailto
-                    window.location.href = mailtoLink;
-
-                    // Show success message
+                    // For now we simulate sending; if you want this to post to a backend,
+                    // hook up an endpoint and replace this logic. Do not auto-open mail clients.
                     setTimeout(() => {
                         statusDiv.className = 'tw-text-center tw-text-sm tw-text-green-600';
-                        statusDiv.textContent = 'Your email client should have opened. If not, please email me directly!';
+                        statusDiv.textContent = 'Thanks — your message is ready. If you need immediate help, email sanjana2003g@gmail.com.';
                         form.reset();
-                        
+
                         // Hide message after 5 seconds
                         setTimeout(() => {
                             statusDiv.classList.add('tw-hidden');
@@ -1248,33 +1248,33 @@
                         return;
                     }
 
+                    // Immediately open the resume in a new tab for the user (required fields validated above)
                     status.className = 'tw-text-center tw-text-sm tw-text-blue-600';
-                    status.textContent = 'Sending request...';
+                    status.textContent = 'Opening resume...';
                     status.classList.remove('tw-hidden');
 
-                    // POST to backend endpoint which will use Mailjet to notify Sanjana
+                    try {
+                        window.open('assets/resume/Sanjana_Gangishetty_Resume.pdf', '_blank');
+                        status.className = 'tw-text-center tw-text-sm tw-text-green-600';
+                        status.textContent = 'Resume opened in a new tab. Thank you!';
+                        setTimeout(() => { closeModal(); }, 2000);
+                    } catch (err) {
+                        console.error('open resume error', err);
+                        status.className = 'tw-text-center tw-text-sm tw-text-red-600';
+                        status.textContent = 'Could not open resume. You can find it at assets/resume/Sanjana_Gangishetty_Resume.pdf';
+                    }
+
+                    // Fire-and-forget: still notify the backend (optional). Errors are logged only.
                     fetch('/api/send-resume', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ name, email, company, message })
-                    }).then(async (resp) => {
-                        const json = await resp.json().catch(() => ({}));
-                        if (resp.ok && json.ok) {
-                            status.className = 'tw-text-center tw-text-sm tw-text-green-600';
-                            status.textContent = 'Request sent — thank you! I will receive your info and follow up.';
-
-                            // Try to open the resume for the requester if available
-                            try { window.open('assets/resume/Sanjana_Gangishetty_Resume.pdf', '_blank'); } catch (err) { /* ignore */ }
-
-                            setTimeout(() => { closeModal(); }, 2000);
-                        } else {
-                            status.className = 'tw-text-center tw-text-sm tw-text-red-600';
-                            status.textContent = json && json.message ? json.message : 'Could not send request. Please try again later.';
+                    }).then(resp => resp.json().catch(() => ({}))).then(json => {
+                        if (!(json && json.ok)) {
+                            console.warn('resume notify non-ok', json);
                         }
-                    }).catch((err) => {
-                        console.error('send-resume error', err);
-                        status.className = 'tw-text-center tw-text-sm tw-text-red-600';
-                        status.textContent = 'Network error while sending request. Please try again later.';
+                    }).catch(err => {
+                        console.warn('resume notify failed (ignored)', err);
                     });
                 });
             }
