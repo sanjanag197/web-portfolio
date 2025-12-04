@@ -11,6 +11,31 @@
     --input-focus-bd-color: #0d0d0d;
 }
 
+/* Resume modal — force light-mode visuals when displayed */
+#resume-modal .modal-content,
+#resume-modal .modal-content * {
+    color: #000 !important;
+}
+#resume-modal .modal-content {
+    background-color: #ffffff !important;
+    -webkit-font-smoothing: antialiased;
+}
+#resume-modal .modal-content input,
+#resume-modal .modal-content textarea {
+    background-color: #ffffff !important;
+    color: #000 !important;
+    border-color: #000 !important;
+}
+#resume-modal .modal-content .tw-bg-black,
+#resume-modal .modal-content button[type="submit"] {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+#resume-modal .modal-content .tw-border {
+    border-color: #000 !important;
+}
+#resume-modal #resume-modal-backdrop { background-color: rgba(0,0,0,0.5) !important; }
+
 /* ---------------------------------
     Dark mode overrides (toggled by `body.dark`)
     Kept minimal and safe (no bracketed selectors) so it compiles.

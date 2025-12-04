@@ -11,7 +11,7 @@
                     <h3
                         class="tw-text-center tw-text-4xl tw-font-semibold max-lg:tw-text-2xl"
                     >
-                        /* Lines 451-452 omitted */
+                        /* Lines 451-452 ded */
                     </h3>
                 </div> -->
         <meta property="og:type" content="website" />
@@ -57,17 +57,12 @@
         <header
             class="tw-absolute tw-top-7 tw-z-20 tw-flex tw-h-[60px] tw-w-full tw-bg-opacity-0 tw-px-[5%] tw-items-center max-lg:tw-mr-auto max-lg:tw-px-4 lg:tw-justify-between"
         >
-            <!-- Left: Sanjana logo -->
-            <a
-                class="tw-p-[4px] tw-text-2xl tw-font-medium tw-flex-shrink-0"
-                href=""
-            >
-               Sanjana
-            </a>
+            <!-- Left spacer (logo removed to keep center nav centered) -->
+            <div class="tw-p-[4px] tw-text-2xl tw-font-medium tw-flex-shrink-0" aria-hidden="true"></div>
             
             <!-- Center: Navigation links (hidden on mobile, shown in collapsible menu) -->
             <div
-                class="collapsible-header animated-collapse max-lg:tw-shadow-md lg:tw-flex lg:tw-flex-1 lg:tw-justify-center lg:tw-ml-40"
+                class="collapsible-header animated-collapse max-lg:tw-shadow-md lg:tw-flex lg:tw-flex-1 lg:tw-justify-center lg:tw-ml-48"
                 id="collapsed-header-items"
             >
                 <div
@@ -147,14 +142,25 @@
                            Sanjana
                         </span>
                         <br />
-                        <span class="reveal-hero-text">
-                            Software/AI Engineer </span
-                        >
+                        <span class="reveal-hero-text tw-whitespace-nowrap">Software/AI Engineer</span>
+                        
                     </div>
                     <div
-                        class="reveal-hero-text tw-mt-2 tw-max-w-[600px] tw-p-2 tw-text-left tw-text-lg max-lg:tw-max-w-full"
+                        class="reveal-hero-text tw-mt-2 tw-max-w-[760px] tw-p-2 tw-text-left tw-text-lg max-lg:tw-max-w-full"
                     >
                         I’m a software engineer who loves building systems that solve meaningful problems—whether that’s powering financial analytics at scale, enhancing AI chat platforms, or creating accessible tools for users. I bring experience across backend, AI/ML, cloud, and full-stack development and enjoy collaborating with cross-functional teams to bring ideas from concept to launch.
+                    </div>
+
+                    <!-- Resume button: opens a modal to request resume -->
+                    <div class="tw-mt-6">
+                        <button
+                            id="resume-btn"
+                            class="tw-flex tw-place-items-center tw-gap-3 tw-rounded-full tw-bg-black tw-text-white tw-px-6 tw-py-3 hover:tw-bg-gray-800"
+                            aria-haspopup="dialog"
+                        >
+                            <span>Resume</span>
+                            <i class="bi bi-file-earmark-person"></i>
+                        </button>
                     </div>
 
                     
@@ -164,14 +170,14 @@
                     class="tw-flex tw-w-full tw-max-w-[50%] tw-place-content-center tw-place-items-center tw-overflow-hidden max-lg:tw-max-w-[unset]"
                 >
                     <div
-                        class="tw-relative tw-flex tw-max-h-[580px] tw-min-h-[450px] tw-min-w-[350px] tw-max-w-[650px] tw-overflow-hidden max-lg:tw-h-fit max-lg:tw-max-h-[320px] max-lg:tw-min-h-[180px] max-lg:tw-w-[320px] max-lg:tw-min-w-[320px]"
+                        class="tw-relative tw-flex tw-max-h-[700px] tw-min-h-[520px] tw-min-w-[280px] tw-max-w-[420px] tw-overflow-hidden max-lg:tw-h-auto max-lg:tw-max-h-[unset] max-lg:tw-min-h-[unset] max-lg:tw-overflow-visible max-lg:tw-w-[320px] max-lg:tw-min-w-[320px]"
                     >
-                        <img
-                            src="assets/images/home/forest.jpg"
-                            alt="app"
-                            class="reveal-hero-img tw-z-[1] tw-h-full tw-w-full tw-object-contain"
-                        />
-                    </div>
+                            <img
+                                src="assets/images/home/profile.heic"
+                                alt="app"
+                                class="reveal-hero-img tw-z-[1] tw-max-w-full tw-h-auto tw-object-contain tw-object-top"
+                            />
+                        </div>
                 </div>
             </div>
         </section>
@@ -195,8 +201,8 @@
                     class="reveal-up tw-my-4 tw-h-[1px] tw-w-[80%] tw-bg-black"
                 ></div>
                 <div
-                    class="tw-mt-1 skills-section"
-                >
+
+            <div class="tw-mt-1 skills-section">
                     <style>
                         /* Use flexbox with centered last row */
                         .skills-section { 
@@ -219,8 +225,13 @@
                             text-align: center !important; 
                             flex-shrink: 0 !important;
                         }
-                        /* keep icon sizing readable */
-                        .skills-section .tw-text-3xl { font-size: 1.5rem !important; }
+                        /* increase icon sizing for skills tiles */
+                        .skills-section .tw-text-3xl { font-size: 2.5rem !important; }
+
+                        /* Slightly reduce on small screens so layout stays intact */
+                        @media (max-width: 640px) {
+                            .skills-section .tw-text-3xl { font-size: 1.75rem !important; }
+                        }
 
                         /* Ensure the inner wrapper stacks and centers content */
                         .skills-section .reveal-up > .tw-flex { 
@@ -313,33 +324,42 @@
                         </div>
                     </div>
 
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-mysql-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">SQL</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-html5-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">HTML</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-r-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">R</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
                             <i class="devicon-scala-plain tw-text-3xl" aria-hidden="true"></i>
                             <h3 class="tw-text-sm tw-font-semibold">Scala</h3>
                         </div>
+                    </div> -->
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-mysql-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">SQL</h3>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-html5-plain colored tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">HTML</h3>
+                        </div>
+                    </div> -->
+
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-react-original colored tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">React</h3>
+                        </div>
                     </div>
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-r-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">R</h3>
+                        </div>
+                    </div> -->
+
+                    
 
                     <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
@@ -356,83 +376,11 @@
                         </div>
                     </div>
 
+                        <!-- PyTorch: use Iconify logos pack -->
                     <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- REST API: generic server icon fallback (Node.js used as a proxy) -->
-                            <i class="devicon-nodejs-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">REST API</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-jest-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Jest</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- NVDA / screen reader icon not available in Devicon; using accessibility proxy -->
-                            <i class="devicon-linux-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">NVDA</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-kubernetes-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Kubernetes</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <span class="iconify tw-text-3xl" data-icon="simple-icons:amazonaws" aria-hidden="true"></span>
-                            <h3 class="tw-text-sm tw-font-semibold">AWS</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <!-- SoapUI doesn't exist in Devicon; using Java as a proxy for SOAP tooling -->
-                            <i class="devicon-java-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">SoapUI</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <span class="iconify tw-text-3xl" data-icon="simple-icons:postman" aria-hidden="true"></span>
-                            <h3 class="tw-text-sm tw-font-semibold">Postman</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-docker-plain colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Docker</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-jenkins-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">CI/CD</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-git-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Git</h3>
-                        </div>
-                    </div>
-
-                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
-                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-firebase-plain tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">Firebase</h3>
+                            <span class="iconify tw-text-3xl" data-icon="simple-icons:pytorch" aria-hidden="true"></span>
+                            <h3 class="tw-text-sm tw-font-semibold">PyTorch</h3>
                         </div>
                     </div>
 
@@ -446,10 +394,93 @@
 
                     <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
                         <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
-                            <i class="devicon-react-original colored tw-text-3xl" aria-hidden="true"></i>
-                            <h3 class="tw-text-sm tw-font-semibold">React</h3>
+                            <i class="devicon-kubernetes-plain colored tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">Kubernetes</h3>
                         </div>
                     </div>
+
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-docker-plain colored tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">Docker</h3>
+                        </div>
+                    </div>
+
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <span class="iconify tw-text-3xl" data-icon="simple-icons:amazonaws" aria-hidden="true"></span>
+                            <h3 class="tw-text-sm tw-font-semibold">AWS</h3>
+                        </div>
+                    </div>
+
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <!-- REST API: generic server icon fallback (Node.js used as a proxy) -->
+                            <i class="devicon-nodejs-plain colored tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">Node.js</h3>
+                        </div>
+                    </div>
+
+                    <!-- REST API tile: explicit with Swagger icon via Iconify (swapped per user request) -->
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <span class="iconify tw-text-3xl" data-icon="simple-icons:swagger" data-inline="false" aria-hidden="true"></span>
+                            <h3 class="tw-text-sm tw-font-semibold">REST API</h3>
+                        </div>
+                    </div>
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-jest-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">Jest</h3>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                             NVDA / screen reader icon not available in Devicon; using accessibility proxy 
+                            <i class="devicon-linux-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">NVDA</h3>
+                        </div>
+                    </div> -->
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                             SoapUI doesn't exist in Devicon; using Java as a proxy for SOAP tooling
+                            <i class="devicon-java-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">SoapUI</h3>
+                        </div>
+                    </div> -->
+
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <span class="iconify tw-text-3xl" data-icon="simple-icons:postman" aria-hidden="true"></span>
+                            <h3 class="tw-text-sm tw-font-semibold">Postman</h3>
+                        </div>
+                    </div>
+
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-jenkins-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">CI/CD</h3>
+                        </div>
+                    </div> -->
+
+                    <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-git-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">Git</h3>
+                        </div>
+                    </div>
+
+                    <!-- <div class="reveal-up tw-flex tw-h-[120px] tw-flex-col tw-gap-2 tw-p-4">
+                        <div class="tw-flex tw-flex-col tw-items-center tw-gap-2">
+                            <i class="devicon-firebase-plain tw-text-3xl" aria-hidden="true"></i>
+                            <h3 class="tw-text-sm tw-font-semibold">Firebase</h3>
+                        </div>
+                    </div> -->
+
                     
                 </div>
 
@@ -461,7 +492,7 @@
             class="tw-relative tw-mt-20 tw-flex tw-min-h-[100vh] tw-w-full tw-max-w-[100vw] tw-flex-col tw-place-content-center tw-place-items-center lg:tw-p-6"
         >
             <div
-                class="tw-flex tw-h-full tw-w-full tw-justify-around tw-gap-8 tw-rounded-xl tw-bg-[#e7e6e685] tw-p-4 tw-pt-15 max-lg:tw-max-w-full max-lg:tw-flex-col past-experience-wrap"
+                class="tw-flex tw-h-full tw-w-full tw-min-h-[800px] max-lg:tw-min-h-[600px] tw-justify-around tw-gap-8 tw-rounded-xl tw-bg-[#e7e6e685] tw-p-4 lg:tw-pt-28 max-lg:tw-pt-12 max-lg:tw-max-w-full max-lg:tw-flex-col past-experience-wrap"
             >
                 <div
                     class="reveal-up tw-flex tw-h-full tw-w-[46%] tw-place-content-center max-lg:tw-w-full lg:tw-sticky lg:tw-top-[20%]"
@@ -899,6 +930,49 @@
             </div>
         </section> -->
 
+        <!-- Resume request modal (hidden by default) -->
+        <div id="resume-modal" class="tw-fixed tw-inset-0 tw-z-50 tw-hidden" aria-hidden="true">
+            <!-- Force a consistent fade using fixed rgba so dark-mode styles don't alter the overlay color -->
+            <div id="resume-modal-backdrop" class="tw-absolute tw-inset-0" style="background-color: rgba(0,0,0,0.5) !important;"></div>
+
+            <div class="modal-content tw-relative tw-my-16 tw-mx-4 tw-max-w-lg tw-rounded-lg tw-bg-white tw-text-black tw-p-6 md:tw-my-24 md:tw-mx-auto">
+                <div class="tw-flex tw-justify-between tw-items-center tw-mb-4">
+                    <h3 class="tw-text-xl tw-font-semibold">Resume</h3>
+                    <button id="resume-modal-close" class="tw-text-2xl" aria-label="Close">&times;</button>
+                </div>
+                <p class="tw-text-sm tw-text-gray-600 tw-mb-4">Please nter your details below to view my resume.</p>
+
+                    <form id="resume-form" class="tw-flex tw-flex-col tw-gap-3">
+                    <label class="tw-flex tw-flex-col">
+                        <span class="tw-text-sm tw-font-medium">Name *</span>
+                        <input id="resume-name" name="name" required class="tw-rounded tw-border tw-p-2" />
+                    </label>
+
+                    <label class="tw-flex tw-flex-col">
+                        <span class="tw-text-sm tw-font-medium">Company * </span>
+                        <input id="resume-company" name="company" class="tw-rounded tw-border tw-p-2" />
+                    </label>
+
+                    <label class="tw-flex tw-flex-col">
+                        <span class="tw-text-sm tw-font-medium">Email *</span>
+                        <input id="resume-email" name="email" type="email"  class="tw-rounded tw-border tw-p-2" />
+                    </label>
+
+                    <label class="tw-flex tw-flex-col">
+                        <span class="tw-text-sm tw-font-medium">Message</span>
+                        <textarea id="resume-message" name="message" rows="4" class="tw-rounded tw-border tw-p-2"></textarea>
+                    </label>
+
+                    <div id="resume-form-status" class="tw-text-sm tw-text-center tw-hidden"></div>
+
+                    <div class="tw-flex tw-justify-end tw-gap-2 tw-mt-2">
+                        <button type="button" id="resume-cancel" class="tw-px-4 tw-py-2 tw-rounded tw-border">Cancel</button>
+                        <button type="submit" class="tw-px-4 tw-py-2 tw-rounded tw-bg-black tw-text-white">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
         <!-- Contact Form Section -->
         <section
             id="contact"
@@ -1014,8 +1088,10 @@
                     
                     // Update icon for desktop toggle
                     if (icon) {
-                        icon.classList.toggle('bi-moon-fill', theme === 'dark');
-                        icon.classList.toggle('bi-sun-fill', theme !== 'dark');
+                        // Show moon in light mode, sun in dark mode (user requested)
+                        icon.classList.toggle('bi-moon-fill', theme !== 'dark');
+                        icon.classList.toggle('bi-sun-fill', theme === 'dark');
+                        // Keep color: white icon in dark mode, black in light
                         icon.classList.toggle('tw-text-white', theme === 'dark');
                         icon.classList.toggle('tw-text-black', theme !== 'dark');
                     }
@@ -1024,8 +1100,9 @@
                     if (toggleMobile) {
                         const mobileIcon = toggleMobile.querySelector('i');
                         if (mobileIcon) {
-                            mobileIcon.classList.toggle('bi-moon-fill', theme === 'dark');
-                            mobileIcon.classList.toggle('bi-sun-fill', theme !== 'dark');
+                            // Mirror desktop behavior: moon in light, sun in dark
+                            mobileIcon.classList.toggle('bi-moon-fill', theme !== 'dark');
+                            mobileIcon.classList.toggle('bi-sun-fill', theme === 'dark');
                             mobileIcon.classList.toggle('tw-text-white', theme === 'dark');
                             mobileIcon.classList.toggle('tw-text-black', theme !== 'dark');
                         }
@@ -1051,11 +1128,11 @@
                 if (toggle) toggle.addEventListener('click', toggleTheme);
                 if (toggleMobile) toggleMobile.addEventListener('click', toggleTheme);
 
-                // Initialize: prefer saved, then OS preference
+                // Initialize: prefer saved preference; otherwise default to dark for all visitors
                 var saved = null;
                 try { saved = localStorage.getItem('theme'); } catch (e) { saved = null; }
-                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                setTheme(saved || (prefersDark ? 'dark' : 'light'));
+                // Default to dark when no saved preference exists so new visitors see dark mode
+                setTheme(saved || 'dark');
             } catch (err) {
                 // fail silently
                 console.error('theme init error', err);
@@ -1104,6 +1181,101 @@
                             statusDiv.classList.add('tw-hidden');
                         }, 5000);
                     }, 500);
+                });
+            }
+        });
+    </script>
+
+    <script>
+        // Resume modal handler
+        document.addEventListener('DOMContentLoaded', function () {
+            const resumeBtn = document.getElementById('resume-btn');
+            const modal = document.getElementById('resume-modal');
+            const backdrop = document.getElementById('resume-modal-backdrop');
+            const closeBtn = document.getElementById('resume-modal-close');
+            const cancelBtn = document.getElementById('resume-cancel');
+            const form = document.getElementById('resume-form');
+            const status = document.getElementById('resume-form-status');
+
+            function openModal() {
+                if (!modal) return;
+                modal.classList.remove('tw-hidden');
+                modal.setAttribute('aria-hidden', 'false');
+                const nameInput = document.getElementById('resume-name');
+                if (nameInput) nameInput.focus();
+            }
+
+            function closeModal() {
+                if (!modal) return;
+                modal.classList.add('tw-hidden');
+                modal.setAttribute('aria-hidden', 'true');
+                if (form) form.reset();
+                if (status) { status.textContent = ''; status.classList.add('tw-hidden'); }
+            }
+
+            resumeBtn && resumeBtn.addEventListener('click', openModal);
+            closeBtn && closeBtn.addEventListener('click', closeModal);
+            cancelBtn && cancelBtn.addEventListener('click', closeModal);
+            backdrop && backdrop.addEventListener('click', closeModal);
+
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    const name = (document.getElementById('resume-name') || {}).value || '';
+                    const email = (document.getElementById('resume-email') || {}).value || '';
+                    const company = (document.getElementById('resume-company') || {}).value || '';
+                    const message = (document.getElementById('resume-message') || {}).value || '';
+
+                    // Basic validation
+                    if (!name.trim()) {
+                        status.className = 'tw-text-center tw-text-sm tw-text-red-600';
+                        status.textContent = 'Please enter your name.';
+                        status.classList.remove('tw-hidden');
+                        return;
+                    }
+                    if (!email.trim()) {
+                        status.className = 'tw-text-center tw-text-sm tw-text-red-600';
+                        status.textContent = 'Please enter your email so I can reply with the resume.';
+                        status.classList.remove('tw-hidden');
+                        return;
+                    }
+                    // simple email format check
+                    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRe.test(email)) {
+                        status.className = 'tw-text-center tw-text-sm tw-text-red-600';
+                        status.textContent = 'Please enter a valid email address.';
+                        status.classList.remove('tw-hidden');
+                        return;
+                    }
+
+                    status.className = 'tw-text-center tw-text-sm tw-text-blue-600';
+                    status.textContent = 'Sending request...';
+                    status.classList.remove('tw-hidden');
+
+                    // POST to backend endpoint which will use Mailjet to notify Sanjana
+                    fetch('/api/send-resume', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, company, message })
+                    }).then(async (resp) => {
+                        const json = await resp.json().catch(() => ({}));
+                        if (resp.ok && json.ok) {
+                            status.className = 'tw-text-center tw-text-sm tw-text-green-600';
+                            status.textContent = 'Request sent — thank you! I will receive your info and follow up.';
+
+                            // Try to open the resume for the requester if available
+                            try { window.open('assets/resume/Sanjana_Gangishetty_Resume.pdf', '_blank'); } catch (err) { /* ignore */ }
+
+                            setTimeout(() => { closeModal(); }, 2000);
+                        } else {
+                            status.className = 'tw-text-center tw-text-sm tw-text-red-600';
+                            status.textContent = json && json.message ? json.message : 'Could not send request. Please try again later.';
+                        }
+                    }).catch((err) => {
+                        console.error('send-resume error', err);
+                        status.className = 'tw-text-center tw-text-sm tw-text-red-600';
+                        status.textContent = 'Network error while sending request. Please try again later.';
+                    });
                 });
             }
         });
