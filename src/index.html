@@ -1207,10 +1207,16 @@
 
             function closeModal() {
                 if (!modal) return;
+                // Remove focus from any element inside the modal before hiding
+                if (document.activeElement && modal.contains(document.activeElement)) {
+                    document.activeElement.blur();
+                }
                 modal.classList.add('tw-hidden');
                 modal.setAttribute('aria-hidden', 'true');
                 if (form) form.reset();
                 if (status) { status.textContent = ''; status.classList.add('tw-hidden'); }
+                // Return focus to the resume button
+                if (resumeBtn) resumeBtn.focus();
             }
 
             resumeBtn && resumeBtn.addEventListener('click', openModal);
