@@ -46,14 +46,14 @@ module.exports = async (req, res) => {
     const SENDER_NAME = process.env.MAILJET_SENDER_NAME || 'Portfolio';
     const RECIPIENT = process.env.MAILJET_RECIPIENT || 'sanjana2003g@gmail.com';
 
-    // Build email body
+    // Build email body for you (Sanjana)
     const textBody = `Resume request\n\nName: ${name}\nEmail: ${email}\nCompany: ${company}\n\nMessage:\n${message}`;
     const htmlBody = `<p>Resume request</p><ul><li><strong>Name:</strong> ${name}</li><li><strong>Email:</strong> ${email}</li><li><strong>Company:</strong> ${company}</li></ul><p><strong>Message:</strong></p><p>${message.replace(/\n/g, '<br/>')}</p>`;
 
     // Prepare attachments array if resume file exists
     let attachments = [];
     try {
-      // In Vercel, the resume should be in the public/assets/resume folder
+      // In Vercel, the resume should be in the assets/resume folder
       const resumePath = path.join(process.cwd(), 'assets', 'resume', 'Sanjana_Gangishetty_Resume.pdf');
       
       if (fs.existsSync(resumePath)) {
@@ -68,7 +68,8 @@ module.exports = async (req, res) => {
       console.warn('Could not read resume file:', err.message);
     }
 
-    const mailMessage = {
+    // Email to you (Sanjana) with request details
+    const mailToYou = {
       From: {
         Email: SENDER_EMAIL,
         Name: SENDER_NAME
@@ -88,17 +89,32 @@ module.exports = async (req, res) => {
       }
     };
 
-    // Include requester as CC so they receive a copy
-    if (email && email.includes('@')) {
-      mailMessage.Cc = [{ Email: email, Name: name }];
-    }
+    // Email to the requester with thank you message
+    const requesterTextBody = `Hi ${name},\n\nThank you for your interest in my resume!\n\nPlease find my resume attached to this email.\n\nBest regards,\nSanjana Gangishetty\nsanjana2003g@gmail.com`;
+    const requesterHtmlBody = `<p>Hi ${name},</p><p>Thank you for your interest in my resume!</p><p>Please find my resume attached to this email.</p><p>Best regards,<br/>Sanjana Gangishetty<br/>sanjana2003g@gmail.com</p>`;
+    
+    const mailToRequester = {
+      From: {
+        Email: SENDER_EMAIL,
+        Name: SENDER_NAME
+      },
+      To: [
+        {
+          Email: email,
+          Name: name
+        }
+      ],
+      Subject: 'Your Resume Request - Sanjana Gangishetty',
+      TextPart: requesterTextBody,
+      HTMLPart: requesterHtmlBody
+    };
 
-    const requestPayload = { Messages: [mailMessage] };
-
-    // Attach resume if present
+    // Attach resume only to the requester's email
     if (attachments.length) {
-      requestPayload.Messages[0].Attachments = attachments;
+      mailToRequester.Attachments = attachments;
     }
+
+    const requestPayload = { Messages: [mailToYou, mailToRequester] };
 
     // Send via Mailjet
     if (!MJ_API_KEY || !MJ_API_SECRET) {
@@ -113,7 +129,7 @@ module.exports = async (req, res) => {
     const result = await mjClient.post('send', { version: 'v3.1' }).request(requestPayload);
 
     if (result && result.body && result.body.Messages) {
-      return res.status(200).json({ ok: true, message: 'Email sent successfully.' });
+      return res.status(200).json({ ok: true, message: 'Emails sent successfully.' });
     }
 
     return res.status(500).json({ ok: false, message: 'Unexpected email service response' });

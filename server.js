@@ -65,7 +65,8 @@ app.post('/api/send-resume', async (req, res) => {
       console.warn('Could not read resume file at', RESUME_PATH, err.message);
     }
 
-    const mailMessage = {
+    // Email to you (Sanjana) with request details
+    const mailToYou = {
       From: {
         Email: SENDER_EMAIL,
         Name: SENDER_NAME
@@ -79,24 +80,38 @@ app.post('/api/send-resume', async (req, res) => {
       Subject: `Resume request from ${name}${company ? ' at ' + company : ''}`,
       TextPart: textBody,
       HTMLPart: htmlBody,
-      // set ReplyTo so you can reply to the requester
       ReplyTo: {
         Email: email,
         Name: name
       }
     };
 
-    // If requester provided an email, include them as CC so they receive a copy
-    if (email && email.includes('@')) {
-      mailMessage.Cc = [{ Email: email, Name: name }];
-    }
+    // Email to the requester with thank you message
+    const requesterTextBody = `Hi ${name},\n\nThank you for your interest in my resume!\n\nPlease find my resume attached to this email.\n\nBest regards,\nSanjana Gangishetty\nsanjana2003g@gmail.com`;
+    const requesterHtmlBody = `<p>Hi ${name},</p><p>Thank you for your interest in my resume!</p><p>Please find my resume attached to this email.</p><p>Best regards,<br/>Sanjana Gangishetty<br/>sanjana2003g@gmail.com</p>`;
+    
+    const mailToRequester = {
+      From: {
+        Email: SENDER_EMAIL,
+        Name: SENDER_NAME
+      },
+      To: [
+        {
+          Email: email,
+          Name: name
+        }
+      ],
+      Subject: 'Your Resume Request - Sanjana Gangishetty',
+      TextPart: requesterTextBody,
+      HTMLPart: requesterHtmlBody
+    };
 
-    const requestPayload = { Messages: [mailMessage] };
-
-    // Attach if present (Mailjet supports Attachments as Message part)
+    // Attach resume only to the requester's email
     if (attachments.length) {
-      requestPayload.Messages[0].Attachments = attachments;
+      mailToRequester.Attachments = attachments;
     }
+
+    const requestPayload = { Messages: [mailToYou, mailToRequester] };
 
     // Send via Mailjet
     if (!MJ_API_KEY || !MJ_API_SECRET) {
