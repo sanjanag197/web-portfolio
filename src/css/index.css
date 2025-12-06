@@ -132,7 +132,7 @@ header > .collapsible-header{
 }
 
 .opacity-100{
-    opacity: 100 !important;
+    opacity: 1 !important;
 }
 
 .btn{
@@ -262,6 +262,15 @@ header > .collapsible-header{
 
     .header-links{
         color: black;
+    }
+
+    /* Override dark mode for mobile menu - keep it white with black text */
+    body.dark header .collapsible-header {
+        background-color: #ffffff !important;
+    }
+
+    body.dark .collapsible-header .header-links {
+        color: #000000 !important;
     }
     
 }
